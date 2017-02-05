@@ -190,14 +190,16 @@ public class Frontend {
             System.out.println(timeOne);
             System.out.println(timeTwo);
 
-            Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone("timeOne"));
-            Calendar calendar1 = new GregorianCalendar(TimeZone.getTimeZone("timeTwo"));
+
+            //shows the time for the country
+            Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone(timeOne));
+            Calendar calendar1 = new GregorianCalendar(TimeZone.getTimeZone(timeTwo));
 
             DateFormat formatter = new SimpleDateFormat("dd MMM  HH:mm:ss ");
             formatter.setTimeZone(TimeZone.getTimeZone(timeOne));
 
             DateFormat formatter1 = new SimpleDateFormat("dd MMM  HH:mm:ss ");
-            formatter.setTimeZone(TimeZone.getTimeZone(timeTwo));
+            formatter1.setTimeZone(TimeZone.getTimeZone(timeTwo));
 
             String TimeOutput1 = formatter.format(calendar.getTime());
             String TimeOutput2 = formatter1.format(calendar1.getTime());
@@ -230,8 +232,8 @@ public class Frontend {
             else if(num1 < num2) {num3 = num2 - num1;}
             else if (num1 == num2) {num3 = 0;}
 
-            DigitalClock.setText(TimeOutput2 + " " + timezone1);
-            DigitalClock1.setText(TimeOutput1 + " " + timezone2);
+            DigitalClock.setText(TimeOutput1 + " " + timezone1);
+            DigitalClock1.setText(TimeOutput2 + " " + timezone2);
             TimeDifferences.setText(num3 + " hours difference");
 
     }
