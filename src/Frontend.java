@@ -1,3 +1,4 @@
+import javafx.scene.control.ColorPicker;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,10 +16,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-//http://stackoverflow.com/questions/11005751/is-there-a-util-to-convert-us-state-name-to-state-code-eg-arizona-to-az/11006236#11006236
-//USA - (State)
-// England
-//Spain
 
 /**
  * Created by Sean on 17/12/2016.
@@ -52,6 +49,7 @@ public class Frontend {
     private JLabel currencyLabel2;
     private JLabel Image1;
     private JLabel Image2;
+    private JButton ColourChoose;
 
     public Frontend() {
         //United Kingdom is automatically Selected
@@ -149,7 +147,7 @@ public class Frontend {
                     double converted = Math.round(converted1*100)/100.00;
                     currency1.setText(String.format("%.2f", converted));
                 }catch(Exception error){
-                   // JOptionPane.showMessageDialog(null, "Input currency!");
+                    JOptionPane.showMessageDialog(null, "Input currency!");
 
                 }
 
@@ -157,7 +155,18 @@ public class Frontend {
 
             }
         });
-    }
+        ColourChoose.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               //Lets the user choose the background colour
+                Color initialBackground = ColourChoose.getBackground();
+                Color background = JColorChooser.showDialog(null, "Change Button Background",
+                        initialBackground);
+                if (background != null) {
+                    Container.setBackground(background);
+            }
+        };
+    });}
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Frontend");
@@ -165,7 +174,8 @@ public class Frontend {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setMinimumSize(new Dimension(550, 500));
+        frame.setMinimumSize(new Dimension(550, 565));
+
 
     }
 
@@ -214,7 +224,7 @@ public class Frontend {
             if(timeTwo == "GMT-6"){num2 = Math.abs(6)*-1; timezone2 = "CST";}
 
             if (num1 > num2 ){num3 = num1 - num2;}
-            else if(num1 < num2) {num3 = num1 + num2;}
+            else if(num1 < num2) {num3 = num2 - num1;}
             else if (num1 == num2) {num3 = 0;}
 
             DigitalClock.setText(TimeOutput2 + " " + timezone1);
