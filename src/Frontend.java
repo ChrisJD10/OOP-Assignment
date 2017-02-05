@@ -72,40 +72,40 @@ public class Frontend {
                     String currencySymbol ="";
                     String link1 = "";
                     if(country1 == "United Kingdom"){country1 = "GBP"; time1 = "GMT+0"; currencySymbol = "£"; link1 = "gb.png";}
-                    else if(country1 == "Spain"){country1 = "EUR"; time1 = "GMT+1"; currencySymbol = "€";}
-                    else if(country1 == "Sweden"){country1 = "SEK"; time1 = "GMT+1"; currencySymbol = "kr";}
-                    else if(country1 == "Germany"){country1 = "EUR"; time1 = "GMT+1"; currencySymbol = "€";}
-                    else if(country1 == "Japan"){country1 = "JPY"; time1 = "GMT+9"; currencySymbol = "¥";}
-                    else if(country1 == "Canada"){country1 = "CAD"; time1 = "GMT-6"; currencySymbol = "C$";}
-                    else if(country1 == "United States of America"){country1 = "USD"; time1 = "GMT-6"; currencySymbol = "$";}
-                    else if(country1 == "Russia"){country1 = "RUB"; time1 = "GMT+3"; currencySymbol = "\u20BD";}
-                    else if(country1 == "Bulgaria"){country1 = "BGN"; time1 = "GMT+2"; currencySymbol = "лв";}
-                    else if(country1 == "Croatia"){country1 = "HRK"; time1 = "GMT+1"; currencySymbol = "kn";}
-                    else if(country1 == "Czech Republic"){country1 = "CZK"; time1 = "GMT+2"; currencySymbol = " Kč";}
-                    else if(country1 == "Denmark"){country1 = "DKK"; time1 = "GMT+1"; currencySymbol = "kr";}
-                    else if(country1 == "Hungary"){country1 = "HUF"; time1 = "GMT+1"; currencySymbol = "Ft";}
-                    else if(country1 == "Poland"){country1 = "PLN"; time1 = "GMT+1"; currencySymbol = "zł";}
-                    else if(country1 == "Romania"){country1 = "RON"; time1 = "GMT+2"; currencySymbol = "lei";}
+                    else if(country1 == "Spain"){country1 = "EUR"; time1 = "GMT+1"; currencySymbol = "€"; link1 = "es.png";}
+                    else if(country1 == "Sweden"){country1 = "SEK"; time1 = "GMT+1"; currencySymbol = "kr"; link1 = "se.png";}
+                    else if(country1 == "Germany"){country1 = "EUR"; time1 = "GMT+1"; currencySymbol = "€"; link1 = "de.png";}
+                    else if(country1 == "Japan"){country1 = "JPY"; time1 = "GMT+9"; currencySymbol = "¥";link1 = "jp.png";}
+                    else if(country1 == "Canada"){country1 = "CAD"; time1 = "GMT-6"; currencySymbol = "C$"; link1 = "ca.png";}
+                    else if(country1 == "United States of America"){country1 = "USD"; time1 = "GMT-6"; currencySymbol = "$"; link1 = "us.png";}
+                    else if(country1 == "Russia"){country1 = "RUB"; time1 = "GMT+3"; currencySymbol = "\u20BD"; link1 = "ru.png";}
+                    else if(country1 == "Bulgaria"){country1 = "BGN"; time1 = "GMT+2"; currencySymbol = "лв"; link1 = "bg.png";}
+                    else if(country1 == "Croatia"){country1 = "HRK"; time1 = "GMT+1"; currencySymbol = "kn"; link1 = "hr.png";}
+                    else if(country1 == "Czech Republic"){country1 = "CZK"; time1 = "GMT+2"; currencySymbol = " Kč"; link1 = "cz.png";}
+                    else if(country1 == "Denmark"){country1 = "DKK"; time1 = "GMT+1"; currencySymbol = "kr"; link1 = "dk.png";}
+                    else if(country1 == "Hungary"){country1 = "HUF"; time1 = "GMT+1"; currencySymbol = "Ft"; link1 = "hu.png";}
+                    else if(country1 == "Poland"){country1 = "PLN"; time1 = "GMT+1"; currencySymbol = "zł"; link1 = "pl.png";}
+                    else if(country1 == "Romania"){country1 = "RON"; time1 = "GMT+2"; currencySymbol = "lei"; link1 = "ro.png";}
 
                     String country2 = list2.getSelectedValue().toString();
                     String time2 = "";
                     String currencySymbol2 ="";
                     String link2 = "";
                     if(country2 == "United Kingdom"){country2 = "GBP"; time2 = "GMT+0"; currencySymbol2 = "£";  link2 = "gb.png";}
-                    else if(country2 == "Spain"){country2 = "EUR"; time2 = "GMT+1"; currencySymbol2 = "€";}
-                    else if(country2 == "Sweden"){country2 = "SEK"; time2 = "GMT+1"; currencySymbol2 = "kr";}
-                    else if(country2 == "Germany"){country2 = "EUR"; time2 = "GMT+1"; currencySymbol2 = "€";}
-                    else if(country2 == "Japan"){country2 = "JPY"; time2 = "GMT+9"; currencySymbol2 = "¥";}
-                    else if(country2 == "Canada"){country2 = "CAD"; time2 = "GMT-6"; currencySymbol2 = "C$";}
-                    else if(country2 == "United States of America"){country2 = "USD"; time2 = "GMT-6"; currencySymbol2 = "$";}
-                    else if(country2 == "Russia"){country2 = "RUB"; time2 = "GMT+3"; currencySymbol2 = "\u20BD";}
-                    else if(country2 == "Bulgaria"){country2 = "BGN"; time2 = "GMT+2"; currencySymbol2 = "лв";}
-                    else if(country2 == "Croatia"){country2 = "HRK"; time2 = "GMT+1"; currencySymbol2 = "kn";}
-                    else if(country2 == "Czech Republic"){country2 = "CZK"; time2 = "GMT+2"; currencySymbol2 = " Kč";}
-                    else if(country2 == "Denmark"){country2 = "DKK"; time2 = "GMT+1"; currencySymbol2 = "kr";}
-                    else if(country2 == "Hungary"){country2 = "HUF"; time2 = "GMT+1"; currencySymbol2 = "Ft";}
-                    else if(country2 == "Poland"){country2 = "PLN"; time2 = "GMT+1"; currencySymbol2 = "zł";}
-                    else if(country2 == "Romania"){country2 = "RON"; time2 = "GMT+2"; currencySymbol2 = "lei";}
+                    else if(country2 == "Spain"){country2 = "EUR"; time2 = "GMT+1"; currencySymbol2 = "€"; link2 = "es.png";}
+                    else if(country2 == "Sweden"){country2 = "SEK"; time2 = "GMT+1"; currencySymbol2 = "kr"; link2 = "se.png";}
+                    else if(country2 == "Germany"){country2 = "EUR"; time2 = "GMT+1"; currencySymbol2 = "€"; link2 = "de.png";}
+                    else if(country2 == "Japan"){country2 = "JPY"; time2 = "GMT+9"; currencySymbol2 = "¥"; link2 = "jp.png";}
+                    else if(country2 == "Canada"){country2 = "CAD"; time2 = "GMT-6"; currencySymbol2 = "C$"; link2 = "ca.png"; link2 = "ca.png";}
+                    else if(country2 == "United States of America"){country2 = "USD"; time2 = "GMT-6"; currencySymbol2 = "$"; link2 = "us.png";}
+                    else if(country2 == "Russia"){country2 = "RUB"; time2 = "GMT+3"; currencySymbol2 = "\u20BD"; link2 = "ru.png";}
+                    else if(country2 == "Bulgaria"){country2 = "BGN"; time2 = "GMT+2"; currencySymbol2 = "лв"; link2 = "bg.png";}
+                    else if(country2 == "Croatia"){country2 = "HRK"; time2 = "GMT+1"; currencySymbol2 = "kn"; link2 = "hr.png";}
+                    else if(country2 == "Czech Republic"){country2 = "CZK"; time2 = "GMT+2"; currencySymbol2 = " Kč"; link2 = "cz.png";}
+                    else if(country2 == "Denmark"){country2 = "DKK"; time2 = "GMT+1"; currencySymbol2 = "kr"; link2 = "dk.png";}
+                    else if(country2 == "Hungary"){country2 = "HUF"; time2 = "GMT+1"; currencySymbol2 = "Ft"; link2 = "hu.png";}
+                    else if(country2 == "Poland"){country2 = "PLN"; time2 = "GMT+1"; currencySymbol2 = "zł"; link2 = "pl.png";}
+                    else if(country2 == "Romania"){country2 = "RON"; time2 = "GMT+2"; currencySymbol2 = "lei"; link2 = "ro.png";}
 
                     //Adds the currency symbol before the currency amount and converted amount
                     currencyLabel1.setText(currencySymbol);
@@ -117,9 +117,12 @@ public class Frontend {
                     //Selects Flag
                     ImageIcon Flag1 = new ImageIcon(link1);
                     ImageIcon Flag2 = new ImageIcon(link2);
+                   //160 x 80
 
                     Image1.setIcon(Flag1);
                     Image2.setIcon(Flag2);
+                    //System.out.println(link1);
+                    //System.out.println(link2);
 
                     // Same as the above
                     Compare(country1, country2);
@@ -160,7 +163,7 @@ public class Frontend {
             public void actionPerformed(ActionEvent e) {
                //Lets the user choose the background colour
                 Color initialBackground = ColourChoose.getBackground();
-                Color background = JColorChooser.showDialog(null, "Change Button Background",
+                Color background = JColorChooser.showDialog(null, "Change Background Colour",
                         initialBackground);
                 if (background != null) {
                     Container.setBackground(background);
@@ -169,12 +172,12 @@ public class Frontend {
     });}
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Frontend");
+        JFrame frame = new JFrame("Country Converter");
         frame.setContentPane(new Frontend().Container);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setMinimumSize(new Dimension(550, 565));
+        frame.setMinimumSize(new Dimension(565, 565));
 
 
     }
