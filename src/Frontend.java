@@ -50,13 +50,14 @@ public class Frontend {
     private JLabel Image1;
     private JLabel Image2;
     private JButton ColourChoose;
+    private JLabel RateLabel;
 
     public Frontend() {
         //United Kingdom is automatically Selected
         list1.setSelectedIndex(13);
         list2.setSelectedIndex(13);
 
-        //starts with UK Flags
+        //starts with United Kingdom Flags
         ImageIcon FlagStart = new ImageIcon("gb.png");
 
         Image1.setIcon(FlagStart);
@@ -114,33 +115,22 @@ public class Frontend {
                     // localise the time1 and time2 by calling it from further down
                     timeZone(time1, time2);
 
-                    //Selects Flag
+                    //Selects Flag, flags are 160 x 80
                     ImageIcon Flag1 = new ImageIcon(link1);
                     ImageIcon Flag2 = new ImageIcon(link2);
-                   //160 x 80
 
                     Image1.setIcon(Flag1);
                     Image2.setIcon(Flag2);
-                    //System.out.println(link1);
-                    //System.out.println(link2);
+
 
                     // Same as the above
                     Compare(country1, country2);
                 }catch(Exception error){
 
-
-
                 }
-            }
-        });
-
-
-        //User inputting a value to be converted. - Chris
-        // Labels added to help identify what is what by James.
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
+                /*Removed the second button and added the currency converter
+                that I created into the first button as well as rounding the values
+                aside from the actual exchange rate*/
                 try {
                     double convert = Double.parseDouble(ConversionRate.getText());
                     double userInput = Double.parseDouble(currencyInput.getText());
@@ -153,11 +143,10 @@ public class Frontend {
                     JOptionPane.showMessageDialog(null, "Input currency!");
 
                 }
-
-
-
             }
         });
+
+
         ColourChoose.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -179,17 +168,11 @@ public class Frontend {
         frame.setVisible(true);
         frame.setMinimumSize(new Dimension(565, 565));
 
-
     }
-
 
         // This is what make the time work by using the computer system clock and adding or taking away by whatever amount. - Sean
 
         public void timeZone(String timeOne, String timeTwo){
-
-            System.out.println(timeOne);
-            System.out.println(timeTwo);
-
 
             //shows the time for the country
             Calendar calendar = new GregorianCalendar(TimeZone.getTimeZone(timeOne));
@@ -204,9 +187,6 @@ public class Frontend {
             String TimeOutput1 = formatter.format(calendar.getTime());
             String TimeOutput2 = formatter1.format(calendar1.getTime());
 
-            System.out.println(TimeOutput1);
-            System.out.println(TimeOutput2);
-
             //num1, 2, 3 are used to calculate the time difference between selected countries
             int num1 = 0;
             int num2 = 0;
@@ -219,6 +199,7 @@ public class Frontend {
             if(timeOne == "GMT+2"){num1 = 2; timezone1 = "EET";}
             if(timeOne == "GMT+3"){num1 = 3; timezone1 = "MSK";}
             if(timeOne == "GMT+9"){num1 = 9; timezone1 = "JST";}
+            //Multiplies the number by -1 to make it a negative
             if(timeOne == "GMT-6"){num1 = Math.abs(6)*-1; timezone1 = "CST";}
 
             if(timeTwo == "GMT+0"){num2 = 0; timezone2 = "GMT";}
@@ -228,6 +209,7 @@ public class Frontend {
             if(timeTwo == "GMT+9"){num2 = 9; timezone2 = "JST";}
             if(timeTwo == "GMT-6"){num2 = Math.abs(6)*-1; timezone2 = "CST";}
 
+            //Calculates what the time difference between the two countries is
             if (num1 > num2 ){num3 = num1 - num2;}
             else if(num1 < num2) {num3 = num2 - num1;}
             else if (num1 == num2) {num3 = 0;}
@@ -258,10 +240,6 @@ public class Frontend {
             response.append(inputLine);
         in.close();
 
-        System.out.println(response);
-        System.out.println(CountryOne);
-        System.out.println(CountryTwo);
-
        parseJson(response.toString());
 
     }
@@ -273,29 +251,12 @@ public class Frontend {
         JSONObject obj = new JSONObject(rawJson);
         JSONObject query = obj.getJSONObject("query");
         JSONObject results = query.getJSONObject("results");
-        System.out.println(results.toString());
+        //System.out.println(results.toString());
 
         JSONObject rate = results.getJSONObject("rate");
-            System.out.println(rate.getString("Rate"));
+            //System.out.println(rate.getString("Rate"));
         ConversionRate.setText(rate.getString("Rate"));
 
         //System.out.println(obj.getString("Rate"));
         }
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
