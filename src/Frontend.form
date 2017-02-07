@@ -362,7 +362,7 @@
             <properties>
               <font name="Arial" size="14"/>
               <foreground color="-1"/>
-              <text value=""/>
+              <text value="0 hours difference"/>
             </properties>
           </component>
           <vspacer id="15c22">

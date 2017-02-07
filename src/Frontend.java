@@ -63,6 +63,14 @@ public class Frontend {
         Image1.setIcon(FlagStart);
         Image2.setIcon(FlagStart);
 
+        //starts with time displayed
+        Calendar calendarStart = new GregorianCalendar(TimeZone.getTimeZone("GMT"));
+        DateFormat formatterStart = new SimpleDateFormat("dd MMM  HH:mm:ss ");
+        String TimeOutputStart = formatterStart.format(calendarStart.getTime());
+        DigitalClock.setText(TimeOutputStart + " GMT" );
+        DigitalClock1.setText(TimeOutputStart + " GMT");
+
+
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
